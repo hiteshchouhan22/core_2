@@ -11,7 +11,8 @@ import {
 } from "@metaplex-foundation/js"
 import {
   DataV2,
-  createCreateMetadataAccountV2Instruction,
+  createCreateMetadataAccountV3Instruction,
+  createUpdateMetadataAccountV2Instruction,
 } from "@metaplex-foundation/mpl-token-metadata"
 
 const tokenName = "BUILD"
@@ -66,7 +67,7 @@ async function createBldToken(
     uses: null,
   } as DataV2
 
-  const instruction = createCreateMetadataAccountV2Instruction(
+  const instruction = createCreateMetadataAccountV3Instruction(
     {
       metadata: metadataPda,
       mint: tokenMint,
@@ -78,6 +79,7 @@ async function createBldToken(
       createMetadataAccountArgsV2: {
         data: tokenMetadata,
         isMutable: true,
+        collectionDetails: null,
       },
     }
   )
