@@ -76,7 +76,7 @@ async function createBldToken(
       updateAuthority: payer.publicKey,
     },
     {
-      createMetadataAccountArgsV2: {
+      createMetadataAccountArgsV3: {
         data: tokenMetadata,
         isMutable: true,
         collectionDetails: null,
